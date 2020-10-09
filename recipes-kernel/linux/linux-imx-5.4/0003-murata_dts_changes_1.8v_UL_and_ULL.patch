@@ -1,8 +1,8 @@
 diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
-index 29a7876..f565db3 100644
+index f65886b..096f261 100644
 --- a/arch/arm/boot/dts/Makefile
 +++ b/arch/arm/boot/dts/Makefile
-@@ -618,8 +618,10 @@ dtb-$(CONFIG_SOC_IMX6UL) += \
+@@ -622,8 +622,10 @@ dtb-$(CONFIG_SOC_IMX6UL) += \
  	imx6ul-14x14-evk-emmc.dtb \
  	imx6ul-14x14-evk-btwifi.dtb \
  	imx6ul-14x14-evk-btwifi-oob.dtb \
@@ -15,7 +15,7 @@ index 29a7876..f565db3 100644
  	imx6ul-14x14-evk-ecspi-slave.dtb \
  	imx6ul-14x14-evk-ecspi.dtb \
  	imx6ul-14x14-evk-gpmi-weim.dtb \
-@@ -646,8 +648,10 @@ dtb-$(CONFIG_SOC_IMX6UL) += \
+@@ -650,8 +652,10 @@ dtb-$(CONFIG_SOC_IMX6UL) += \
  	imx6ull-14x14-evk-emmc.dtb \
  	imx6ull-14x14-evk-btwifi.dtb \
  	imx6ull-14x14-evk-btwifi-oob.dtb \

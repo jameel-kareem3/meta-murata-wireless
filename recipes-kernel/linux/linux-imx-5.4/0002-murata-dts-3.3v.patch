@@ -1,5 +1,5 @@
 diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
-index 70250bd..29a7876 100644
+index 0ec6f5b..f65886b 100644
 --- a/arch/arm/boot/dts/Makefile
 +++ b/arch/arm/boot/dts/Makefile
 @@ -444,6 +444,8 @@ dtb-$(CONFIG_SOC_IMX6Q) += \
@@ -11,7 +11,7 @@ index 70250bd..29a7876 100644
  	imx6dl-sabresd-hdcp.dtb \
  	imx6dl-sabresd-enetirq.dtb \
  	imx6dl-sabresd-pcie.dtb \
-@@ -533,6 +535,8 @@ dtb-$(CONFIG_SOC_IMX6Q) += \
+@@ -534,6 +536,8 @@ dtb-$(CONFIG_SOC_IMX6Q) += \
  	imx6q-sabresd.dtb \
  	imx6q-sabresd-ldo.dtb \
  	imx6q-sabresd-btwifi.dtb \
@@ -20,16 +20,16 @@ index 70250bd..29a7876 100644
  	imx6q-sabresd-hdcp.dtb \
  	imx6q-sabresd-uart.dtb \
  	imx6q-sabresd-enetirq.dtb \
-@@ -568,6 +572,8 @@ dtb-$(CONFIG_SOC_IMX6Q) += \
+@@ -570,6 +574,8 @@ dtb-$(CONFIG_SOC_IMX6Q) += \
  	imx6qp-sabresd.dtb \
  	imx6qp-sabresd-ldo.dtb \
  	imx6qp-sabresd-btwifi.dtb \
 +	imx6qp-sabresd-btwifi-m2.dtb \
 +	imx6qp-sabresd-btwifi-m2-oob.dtb \
  	imx6qp-sabresd-hdcp.dtb \
+ 	imx6qp-sabresd-pcie-ep.dtb \
  	imx6qp-tx6qp-8037.dtb \
- 	imx6qp-tx6qp-8037-mb7.dtb \
-@@ -581,6 +587,7 @@ dtb-$(CONFIG_SOC_IMX6SL) += \
+@@ -584,6 +590,7 @@ dtb-$(CONFIG_SOC_IMX6SL) += \
  	imx6sl-evk-csi.dtb \
  	imx6sl-evk-uart.dtb \
  	imx6sl-evk-btwifi.dtb \
@@ -37,16 +37,16 @@ index 70250bd..29a7876 100644
  	imx6sl-warp.dtb
  dtb-$(CONFIG_SOC_IMX6SLL) += \
  	imx6sll-evk.dtb \
-@@ -599,6 +606,8 @@ dtb-$(CONFIG_SOC_IMX6SX) += \
+@@ -602,6 +609,8 @@ dtb-$(CONFIG_SOC_IMX6SX) += \
  	imx6sx-sdb-m4.dtb \
  	imx6sx-sdb-mqs.dtb \
  	imx6sx-sdb-btwifi.dtb \
 +	imx6sx-sdb-btwifi-m2.dtb \
 +	imx6sx-sdb-btwifi-m2-oob.dtb \
+ 	imx6sx-sdb-pcie-ep.dtb \
  	imx6sx-softing-vining-2000.dtb \
  	imx6sx-udoo-neo-basic.dtb \
- 	imx6sx-udoo-neo-extended.dtb \
-@@ -609,6 +618,8 @@ dtb-$(CONFIG_SOC_IMX6UL) += \
+@@ -613,6 +622,8 @@ dtb-$(CONFIG_SOC_IMX6UL) += \
  	imx6ul-14x14-evk-emmc.dtb \
  	imx6ul-14x14-evk-btwifi.dtb \
  	imx6ul-14x14-evk-btwifi-oob.dtb \
@@ -55,7 +55,7 @@ index 70250bd..29a7876 100644
  	imx6ul-14x14-evk-ecspi-slave.dtb \
  	imx6ul-14x14-evk-ecspi.dtb \
  	imx6ul-14x14-evk-gpmi-weim.dtb \
-@@ -635,6 +646,8 @@ dtb-$(CONFIG_SOC_IMX6UL) += \
+@@ -639,6 +650,8 @@ dtb-$(CONFIG_SOC_IMX6UL) += \
  	imx6ull-14x14-evk-emmc.dtb \
  	imx6ull-14x14-evk-btwifi.dtb \
  	imx6ull-14x14-evk-btwifi-oob.dtb \
@@ -64,6 +64,23 @@ index 70250bd..29a7876 100644
  	imx6ull-14x14-evk-gpmi-weim.dtb \
  	imx6ull-9x9-evk.dtb \
  	imx6ull-9x9-evk-ldo.dtb \
+diff --git a/arch/arm/boot/dts/Makefile.rej b/arch/arm/boot/dts/Makefile.rej
+new file mode 100644
+index 00000000..f38ef62
+--- /dev/null
++++ b/arch/arm/boot/dts/Makefile.rej
+@@ -0,0 +1,11 @@
++--- arch/arm/boot/dts/Makefile
+++++ arch/arm/boot/dts/Makefile
++@@ -606,6 +613,8 @@ dtb-$(CONFIG_SOC_IMX6SX) += \
++ 	imx6sx-sdb-m4.dtb \
++ 	imx6sx-sdb-mqs.dtb \
++ 	imx6sx-sdb-btwifi.dtb \
+++	imx6sx-sdb-btwifi-m2.dtb \
+++	imx6sx-sdb-btwifi-m2-oob.dtb \
++ 	imx6sx-softing-vining-2000.dtb \
++ 	imx6sx-udoo-neo-basic.dtb \
++ 	imx6sx-udoo-neo-extended.dtb \
 diff --git a/arch/arm/boot/dts/imx6dl-sabresd-btwifi-m2-oob.dts b/arch/arm/boot/dts/imx6dl-sabresd-btwifi-m2-oob.dts
 new file mode 100644
 index 00000000..602f401
