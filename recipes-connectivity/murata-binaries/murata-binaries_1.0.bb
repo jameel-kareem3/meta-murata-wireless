@@ -12,7 +12,6 @@ SRC_URI = " \
 	git://github.com/murata-wireless/cyw-fmac-utils-imx64;protocol=http;branch=zigra;destsuffix=cyw-fmac-utils-imx64;name=cyw-fmac-utils-imx64 \
 	git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git;protocol=http;branch=master \
 	file://WlanCalData_ext_DB_W8997_1YM_ES2_Rev_C.conf \
-	file://fw_unlock_mmc.sh \
 	file://switch_module_imx6ull14x14evk.sh \
 	file://switch_module_imx6ulevk.sh \
 	file://switch_module_imx6sxsabresd.sh \
@@ -145,8 +144,6 @@ do_install () {
 	install -m 0644 ${S}/imx-firmware/nxp/FwImage_8997/helper_uart_3000000.bin ${D}/lib/firmware/nxp
 	install -m 0644 ${S}/imx-firmware/nxp/FwImage_8997/uart8997_bt_v4.bin ${D}/lib/firmware/nxp
 
-	install -Dm 0644 ${S}/fw_unlock_mmc.sh  ${D}${sysconfdir}/profile.d/fw_unlock_mmc.sh
-
 #	Based on MACHINE type
 	echo "DEBUG:: MACHINE TYPE :: ${MACHINE}"
 	case ${MACHINE} in
@@ -174,7 +171,7 @@ do_install () {
 	  imx8mqevk)
 		install -m 755 ${S}/switch_module_imx8mqevk.sh ${D}/usr/sbin/switch_module.sh
 		;;
-	  imx7dsabresd|imx7ulpevk|imx6qpsabresd|imx6slevk|imx8mmddr4evk)
+	  imx7dsabresd|imx7ulpevk|imx6qpsabresd|imx6slevk|imx8mmddr4evk|imx8mnddr4evk)
 		install -m 755 ${S}/switch_module.sh ${D}/usr/sbin/switch_module.sh
 		;;
 	esac
